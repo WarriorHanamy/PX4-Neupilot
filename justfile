@@ -1,9 +1,9 @@
-build-image:
+build-px4:
     docker build -f docker/px4-simulator.dockerfile \
     --network=host \
     -t px4-gazebo-harmonic:v1 .
 
-create-container:
+run-px4:
     docker run -it --gpus all \
         --rm \
         --entrypoint bash \
@@ -15,19 +15,14 @@ create-container:
         --name px4-gazebo-harmonic-tmp \
         px4-gazebo-harmonic:v1
 
-run-container:
-    docker start -ai px4-gazebo-harmonic-tmp
-
-stop-container:
-    docker stop px4-gazebo-harmonic-tmp
 
 clean-image:
     docker rmi -f px4-gazebo-harmonic:v1
 
-enter-container:
+enter-px4:
     docker exec -it px4-gazebo-harmonic-tmp /bin/bash
 
-clean-container:
+clean-px4:
     docker rm -f px4-gazebo-harmonic-tmp
 
 df-docker:

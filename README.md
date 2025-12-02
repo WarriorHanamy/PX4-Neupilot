@@ -1,6 +1,6 @@
 <div align="center">
 
-# PX4-Neupilot
+# PX4-NeuPilot
 
 **PX4-Autopilot for Neural Contorl**
 
@@ -11,23 +11,24 @@
 </div>
 
 ## Quick Start
-### clone the repo
+### 📦 Clone the repo
 ```bash
-  git clone git@github.com:Arclunar/PX4-Neupilot.git --recursive --depth 1
+  git clone https://github.com/Arclunar/PX4-Neupilot.git --recursive --depth 1
 ```
 
 
-### Docker
-Build the docker image
+### 🎯 Docker Deployment
+#### 1. Build the docker image
 ```bash
-  just build-image
+  just build-px4
 ```
 
-Then run docker
+#### 2. Then run docker
 ```bash
-  just run-container
+  just run-px4
 ```
 
+#### 3. Start the simulation
 In the docker terminal, run
 ```bash
   runsim.sh 2
